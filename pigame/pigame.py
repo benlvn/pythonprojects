@@ -1,8 +1,9 @@
 import curses
 
-if __name__ == "__main__":
-    libstuff = curses.initscr()
-    libstuff.beep()
-    print('3.', end='')
+def main(stdscr):
+    curses.echo()
     while True:
-        num = int(input())
+        stdscr.getch()
+
+if __name__ == "__main__":
+    curses.wrapper(main)
