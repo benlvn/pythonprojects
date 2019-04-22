@@ -15,6 +15,9 @@ def fib(num, mode):
         return b
 
 if __name__ == "__main__":
+    if len(argv) != 3:
+        print("Usage: python3 fib.py [method] [num]")
+        exit(1)
     if '1' == argv[1]:
         print(fib(int(argv[2]), 1))
     elif '2' == argv[1]:
