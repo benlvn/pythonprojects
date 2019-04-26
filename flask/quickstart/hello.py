@@ -3,6 +3,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    app.logger.debug('A value for debugging')
+    app.logger.warning('A warning occurred (%d apples)', 42)
+    app.logger.error('An error occurred')
     return 'Index Page'
 
 @app.route('/hello')
