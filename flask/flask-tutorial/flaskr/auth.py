@@ -56,7 +56,7 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('hello'))
+            return redirect(url_for('index'))
 
         flash(error)
 
@@ -71,7 +71,7 @@ def load_logged_in_user():
     else:
         g.user = get_db().execute(
             'SELECT * FROM user WHERE id = ?', (user_id,)
-        ).fetchone
+        ).fetchone()
 
 @bp.route('/logout')
 def logout():
